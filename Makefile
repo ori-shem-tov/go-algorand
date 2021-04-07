@@ -115,7 +115,7 @@ crypto/libs/$(OS_TYPE)/$(ARCH)/lib/libsodium.a:
 	mkdir -p crypto/copies/$(OS_TYPE)/$(ARCH)
 	cp -R crypto/libsodium-fork crypto/copies/$(OS_TYPE)/$(ARCH)/libsodium-fork
 	cd crypto/copies/$(OS_TYPE)/$(ARCH)/libsodium-fork && \
-		./autogen.sh --prefix $(SRCPATH)/crypto/libs/$(OS_TYPE)/$(ARCH) && \
+		./autogen.sh --prefix "$(SRCPATH)/crypto/libs/$(OS_TYPE)/$(ARCH)" && \
 		./configure --disable-shared --prefix="$(SRCPATH)/crypto/libs/$(OS_TYPE)/$(ARCH)" && \
 		$(MAKE) && \
 		$(MAKE) install
