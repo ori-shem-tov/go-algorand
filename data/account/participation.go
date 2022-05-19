@@ -221,7 +221,7 @@ func FillDBWithParticipationKeys(store db.Accessor, address basics.Address, firs
 	}
 
 	// TODO: change to ConsensusCurrentVersion when updated
-	interval := config.Consensus[protocol.ConsensusFuture].CompactCertRounds
+	interval := uint64(256)
 	maxValidPeriod := config.Consensus[protocol.ConsensusCurrentVersion].MaxKeyregValidPeriod
 
 	if maxValidPeriod != 0 && uint64(lastValid-firstValid) > maxValidPeriod {
