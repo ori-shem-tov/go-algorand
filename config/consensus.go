@@ -1130,11 +1130,11 @@ func initConsensusProtocols() {
 	vFuture.AgreementFilterTimeoutPeriod0 = 4 * time.Second
 
 	// Enable compact certificates.
-	vFuture.CompactCertRounds = 256
-	vFuture.CompactCertTopVoters = 1024 * 1024
-	vFuture.CompactCertVotersLookback = 16
-	vFuture.CompactCertWeightThreshold = (1 << 32) * 30 / 100
-	vFuture.CompactCertSecKQ = 128
+	//vFuture.CompactCertRounds = 256
+	//vFuture.CompactCertTopVoters = 1024 * 1024
+	//vFuture.CompactCertVotersLookback = 16
+	//vFuture.CompactCertWeightThreshold = (1 << 32) * 30 / 100
+	//vFuture.CompactCertSecKQ = 128
 
 	vFuture.LogicSigVersion = 7
 	vFuture.MinInnerApplVersion = 4
