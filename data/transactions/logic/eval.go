@@ -4643,7 +4643,6 @@ func opVrfVerify(cx *EvalContext) error {
 	copy(proof[:], proofbytes[:])
 
 	pubkeybytes := cx.stack[pprev].Bytes
-	return fmt.Errorf("pub %v, data %v, proof %v", pubkeybytes, data, proofbytes)
 	var pubkey crypto.VrfPubkey
 	if len(pubkeybytes) != len(pubkey) {
 		return fmt.Errorf("vrf pubkey wrong size %d != %d, %v", len(pubkeybytes), len(pubkey), pubkeybytes)
@@ -4661,6 +4660,7 @@ func opVrfVerify(cx *EvalContext) error {
 	default:
 		return fmt.Errorf("unsupported vrf_verify standard %s", std)
 	}
+	return fmt.Errorf("verified %v, out %v", verified, output)
 
 	cx.stack[pprev].Bytes = output[:]
 	cx.stack[prev].Bytes = nil
