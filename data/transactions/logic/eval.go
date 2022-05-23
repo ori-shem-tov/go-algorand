@@ -4643,6 +4643,7 @@ func opVrfVerify(cx *EvalContext) error {
 	copy(proof[:], proofbytes[:])
 
 	pubkeybytes := cx.stack[pprev].Bytes
+	return fmt.Errorf("pub %v, data %v, proof %v", pubkeybytes, data, pubkeybytes)
 	var pubkey crypto.VrfPubkey
 	if len(pubkeybytes) != len(pubkey) {
 		return fmt.Errorf("vrf pubkey wrong size %d != %d, %v", len(pubkeybytes), len(pubkey), pubkeybytes)
