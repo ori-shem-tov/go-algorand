@@ -4661,8 +4661,6 @@ func opVrfVerify(cx *EvalContext) error {
 		return fmt.Errorf("unsupported vrf_verify standard %s", std)
 	}
 
-	return fmt.Errorf("data %v proofbytes %v pubkeybytes %v", data[:], proofbytes[:], pubkeybytes[:])
-
 	cx.stack[pprev].Bytes = output[:]
 	cx.stack[prev].Bytes = nil
 	cx.stack[prev].Uint = boolToUint(verified)
